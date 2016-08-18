@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<f:facet name="first">
+		<link rel="shortcut icon" type="image/x-icon"
+			href="/resources/img/MITHRA.ico" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+	</f:facet>
+	<ui:insert src="titulePage">
+		<title>Sispaweb - GrupoDeveloper</title>
+	</ui:insert>
+
+	<h:outputScript name="js/ripple-effect.js" library="adamantium-layout" />
+	<h:outputScript name="js/perfect-scrollbar.js"
+		library="adamantium-layout" />
+	<h:outputScript name="js/layout.js" library="adamantium-layout" />
+	<ui:insert name="head" />
+</h:head>
+
+<h:body>
+
+	<style>
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+</style>
+
+
+	<h:form>
+		<p:dataTable>
+			<p:column headerText="Column1"></p:column>
+			<p:column headerText="Column2"></p:column>
+			<p:column headerText="Column3"></p:column>
+			<p:column headerText="Column4"></p:column>
+			<p:column headerText="Column5"></p:column>
+			<p:column headerText="Column6"></p:column>
+		</p:dataTable>
+	</h:form>
+
+
+	<h:outputStylesheet name="css/core-layout.css"
+		library="adamantium-layout" />
+	<h:outputStylesheet name="css/animate.css" library="adamantium-layout" />
+	<h:outputStylesheet name="css/adamantium-font.css"
+		library="adamantium-layout" />
+	<h:outputStylesheet name="css/ripple-effect.css"
+		library="adamantium-layout" />
+	<h:outputStylesheet name="css/perfect-scrollbar.css"
+		library="adamantium-layout" />
+	<h:outputStylesheet name="css/font-awesome.css"
+		library="adamantium-layout" />
+	<h:outputStylesheet name="css/adamantium-layout.css"
+		library="adamantium-layout" />
+</h:body>
+
+</html>

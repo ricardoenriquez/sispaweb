@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	metadata-complete="false">
+
+	<welcome-file-list>
+		<welcome-file>/ui/seguridad/login.xhtml</welcome-file>
+	</welcome-file-list>
+
+	<login-config>
+		<auth-method>FORM</auth-method>
+		<realm-name>mithra-web-policy</realm-name>
+		<form-login-config>
+			<form-login-page>/ui/seguridad/login.xhtml</form-login-page>
+			<form-error-page>/ui/seguridad/login.xhtml?errorAutenticacion=true</form-error-page>
+		</form-login-config>
+	</login-config>
+
+	<security-role>
+		<role-name>*</role-name>
+	</security-role>
+
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>*</web-resource-name>
+			<url-pattern>/ui/seguridad/*</url-pattern>
+		</web-resource-collection>
+	</security-constraint>
+
+<!-- 	<security-constraint> -->
+<!-- 		<display-name>Admin Area</display-name> -->
+<!-- 		<web-resource-collection> -->
+<!-- 			<web-resource-name>*</web-resource-name> -->
+<!-- 			<url-pattern>/ui/*</url-pattern> -->
+<!-- 			<http-method>GET</http-method> -->
+<!-- 			<http-method>POST</http-method> -->
+<!-- 		</web-resource-collection> -->
+<!-- 		<auth-constraint> -->
+<!-- 			<description>Para cualquier rol</description> -->
+<!-- 			<role-name>*</role-name> -->
+<!-- 		</auth-constraint> -->
+<!-- 		<user-data-constraint> -->
+<!-- 			<transport-guarantee>NONE</transport-guarantee> -->
+<!-- 		</user-data-constraint> -->
+<!-- 	</security-constraint> -->
+
+	<context-param>
+		<param-name>primefaces.THEME</param-name>
+		<param-value>adamantium</param-value>
+	</context-param>
+
+	<error-page>
+		<error-code>403</error-code>
+		<location>/ui/error/403.xhtml</location>
+	</error-page>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/ui/error/404.xhtml</location>
+	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/ui/error/500.xhtml</location>
+	</error-page>
+</web-app>

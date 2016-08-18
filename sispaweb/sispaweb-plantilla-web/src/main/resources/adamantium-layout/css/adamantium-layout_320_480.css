@@ -1,0 +1,317 @@
+/* Portrait phones and down */
+@media (min-width: 480px) and (max-width: 640px) {
+  html,
+  body {
+    height: auto;
+    background: rgba(0, 0, 0, 0) repeat scroll 0 0;
+  }
+  /* topbar */
+  #layout-topbar {
+    width: 100%;
+    height: 60px;
+  }
+  #menu-button {
+    width: 60px;
+    height: 35px;
+    padding-top: 20px;
+    float: left;
+  }
+  #layout-topbar #logo {
+    margin-left: 15px;
+  }
+  /* topbar menu */
+  #topmenu-button {
+    width: 40px;
+    height: 37px;
+    display: block;
+    text-align: center;
+    padding-top: 23px;
+    float: right;
+    cursor: pointer;
+    color: #FFFFFF;
+  }
+  #topmenu-button:hover,
+  #topmenu-button.active-menu {
+    background-color: #3b6eb4;
+  }
+  #top-menu {
+    display: none;
+    width: 200px;
+    float: right;
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    background-color: #ffffff;
+    overflow: hidden;
+    height: 250px;
+    overflow-y: auto;
+    -webkit-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+  }
+  #top-menu.active-menu {
+    display: block;
+  }
+  #top-menu > li {
+    width: 200px;
+    display: block;
+    height: auto;
+  }
+  #top-menu > li > a {
+    display: block;
+    padding: 20px 15px;
+    cursor: pointer;
+  }
+  #top-menu > li > a > i {
+    font-size: 20px;
+    float: left;
+    margin-right: 5px;
+  }
+  #top-menu > li > a > span {
+    display: inline-block;
+    float: left;
+    margin-top: 2px;
+  }
+  #top-menu > li ul {
+    width: 200px;
+    overflow: hidden;
+    position: inherit;
+    height: 0px;
+    padding: 0px;
+    margin: 0px !important;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+  #top-menu > li ul.active-menu {
+    height: auto;
+    background-color: #F9F9F9;
+  }
+  /* Changing Top Menu Positioning To Left For Mobile Devices */
+  .layout-menu-cover-top {
+    width: 300px;
+    height: 100%;
+    margin-left: -300px;
+    margin-top: 0px;
+    -webkit-box-shadow: 1px 0px 1px 0px rgba(0, 0, 0, 0.1) !important;
+    -moz-box-shadow: 1px 0px 1px 0px rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 1px 0px 1px 0px rgba(0, 0, 0, 0.1) !important;
+  }
+  .layout-menu-cover-top.active-menu {
+    margin-left: 0px;
+    height: 100%;
+    margin-top: 0px;
+    overflow: hidden;
+  }
+  /* Changing Top Menu Positioning To Left For Mobile Devices */
+  .layout-menu-cover-top .layout-menu {
+    width: 300px;
+    height: 100%;
+    margin-top: 60px;
+  }
+  .layout-menu-cover-top .layout-menu > li {
+    float: left;
+    width: 100%;
+    border-bottom: dotted 1px #E0E0E0;
+  }
+  .layout-menu-cover-top .layout-menu > li > a {
+    display: block;
+    padding: 24px 20px;
+    cursor: pointer;
+    color: #ffffff;
+    font-weight: 500;
+  }
+  .layout-menu-cover-top .layout-menu > li > a:hover,
+  .layout-menu-cover-top .layout-menu > li > a.active-menu {
+    background-color: #3b6eb4;
+  }
+  .layout-menu-cover-top .layout-menu > li > a i {
+    font-size: 16px;
+  }
+  .layout-menu-cover-top .layout-menu > li ul {
+    width: 300px;
+    overflow: hidden;
+    height: 0px;
+    padding: 0px;
+    margin: 0px;
+  }
+  .layout-menu-cover-top .layout-menu > li ul.active-menu {
+    overflow: hidden;
+    height: auto;
+  }
+  .layout-menu-cover-top .layout-menu > li > ul {
+    width: 300px;
+    overflow: hidden;
+    height: 0px;
+    background-color: #ffffff;
+    padding: 0px;
+    margin: 0px;
+    position: inherit;
+    box-shadow: none;
+  }
+  .layout-menu-cover-top .layout-menu > li > ul.active-menu {
+    overflow: hidden;
+    height: auto;
+    position: inherit;
+    box-shadow: none;
+    margin: 0px;
+    max-height: 100%;
+  }
+  .layout-menu-cover-top .layout-menu > li > ul li {
+    float: left;
+    width: 300px;
+  }
+  .layout-menu-cover-top .layout-menu > li > ul li a {
+    display: block;
+    padding: 10px 30px;
+    cursor: pointer;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  /*Changing Top Menu Positioning To Left For Mobile Devices (Menu Levels) */
+  .layout-menu-cover-top .menu-level-1 li a {
+    padding-left: 40px !important;
+  }
+  .layout-menu-cover-top .menu-level-2 li a {
+    padding-left: 50px !important;
+  }
+  .layout-menu-cover-top .menu-level-3 li a {
+    padding-left: 60px !important;
+  }
+  /* For Real Left Menu */
+  .layout-menu-cover-left .layout-menu {
+    margin-top: 60px;
+  }
+  /*Layout Portlets Cover*/
+  #layout-portlets-cover {
+    padding: 70px 10px;
+  }
+}
+/* topbar */
+/*@topbar-bg-color: #ffffff;*/
+.topbar-shadow {
+  -webkit-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+}
+/*@mainmenu-toggler-bg-color-hover:#f2f2f2;*/
+/*@mainmenu-toggler-icon-lines-bg-color: #666F77;*/
+/* topbar menu */
+/*@topbar-menu-first-level-link-color: #666F77;*/
+.topbar-menu-submenu-shadow {
+  -webkit-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+}
+/* main menu */
+.mainmenu-cover-shadow {
+  -webkit-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+}
+.mainmenu-left-cover-shadow {
+  -webkit-box-shadow: 1px 0px 1px 0px rgba(0, 0, 0, 0.1) !important;
+  -moz-box-shadow: 1px 0px 1px 0px rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 1px 0px 1px 0px rgba(0, 0, 0, 0.1) !important;
+}
+/*@mainmenu-cover-bg-color:#ffffff;*/
+.mainmenu-submenu-shadow {
+  -webkit-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+}
+/* cards */
+/*@card-topic-color: #439FE0; */
+.card-border-radius {
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+}
+/* misc */
+.short-transition {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.medium-transition {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.long-transition {
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.no-transition {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -ms-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+.no-transform {
+  -webkit-transform: none !important;
+  -moz-transform: none !important;
+  -o-transform: none !important;
+  -ms-transform: none !important;
+  transform: none !important;
+}
+/* DARK ADAMANTIUM */
+/* topbar */
+/* topbar menu */
+/* main menu */
+/* for mobile devices */
+/* ======================================== COLOR MITHRA WEB =========================================== */
+/* Main Primary color
+@color-primary-0: #FB8C00;	
+@color-primary-1: #FFB251;
+@color-primary-2: #FFA32F;
+@color-primary-3: #CB7100;
+@color-primary-4: #A95E00; 
+
+@color-primary-0: #F37144;	
+@color-primary-1: #FFA282;
+@color-primary-2: #FF8B63;
+@color-primary-3: #E75421;
+@color-primary-4: #BD3D11;
+
+@color-primary-0: #D40F0F;	
+@color-primary-1: #FA5353;
+@color-primary-2: #ED2F2F;
+@color-primary-3: #B20505;
+@color-primary-4: #930000; 
+
+@color-primary-0: #FF8E13;	
+@color-primary-1: #FFB96D;
+@color-primary-2: #FFA340;
+@color-primary-3: #D26D00;
+@color-primary-4: #8C4900;  
+
+@color-primary-0: #FF8C16;	
+@color-primary-1: #FFB76E;
+@color-primary-2: #FFA243;
+@color-primary-3: #EF7800;
+@color-primary-4: #B95D00; 
+
+@color-primary-0: #FFDD2C;	
+@color-primary-1: #FFEB80;
+@color-primary-2: #FFE354;
+@color-primary-3: #FFD600;
+@color-primary-4: #D2B000; 
+
+
+@color-primary-0: #0289D1;	
+@color-primary-1: #31A7E6;
+@color-primary-2: #0A9DEC;
+@color-primary-3: #026296;
+@color-primary-4: #014C75; */
+/* Main Primary color */
+

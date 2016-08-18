@@ -1,0 +1,31 @@
+/* Portrait phones and down */
+@media (min-height:320px) and (max-height:560px){
+
+ 
+    /* Changing Top Menu Positioning To Left For Mobile Devices */
+    .layout-menu-cover-top{width:300px; height:100%; margin-left:-300px; margin-top:0px; .mainmenu-left-cover-shadow;}
+    .layout-menu-cover-top.active-menu{margin-left:0px; height:100%; margin-top:0px; overflow:hidden;}
+    
+        /* Changing Top Menu Positioning To Left For Mobile Devices */
+        .layout-menu-cover-top .layout-menu{width:300px; height:100%; margin-top:60px;}
+            .layout-menu-cover-top .layout-menu > li{float:left; width:100%; border-bottom: dotted 1px #E0E0E0;}
+                .layout-menu-cover-top .layout-menu > li > a{display:block; padding:24px 20px; cursor:pointer; color:@mainmenu-link-color; font-weight:500;}
+                .layout-menu-cover-top .layout-menu > li > a:hover,
+                .layout-menu-cover-top .layout-menu > li > a.active-menu{background-color:@color-primary-1;}
+                    .layout-menu-cover-top .layout-menu > li > a i{font-size:16px;}
+
+        .layout-menu-cover-top .layout-menu > li ul{width:300px; overflow:hidden; height:0px; padding:0px; margin:0px;}
+        .layout-menu-cover-top .layout-menu > li ul.active-menu{overflow:hidden; height:auto;}
+
+        .layout-menu-cover-top .layout-menu > li > ul{width:300px; overflow:hidden; height:0px; background-color:#ffffff; padding:0px; margin:0px; position:inherit; box-shadow:none;}
+        .layout-menu-cover-top .layout-menu > li > ul.active-menu{overflow:hidden; height:auto; position:inherit; box-shadow:none; margin:0px; max-height:100%;}
+            .layout-menu-cover-top .layout-menu > li > ul li{float:left; width:300px;}
+                .layout-menu-cover-top .layout-menu > li > ul li a{display:block; padding:10px 30px; cursor:pointer; color:#666F77; font-weight:500; font-size:14px;}
+
+            /*Changing Top Menu Positioning To Left For Mobile Devices (Menu Levels) */
+            .layout-menu-cover-top .menu-level-1 li a{padding-left:40px !important;}
+            .layout-menu-cover-top .menu-level-2 li a{padding-left:50px !important;}
+            .layout-menu-cover-top .menu-level-3 li a{padding-left:60px !important;}
+
+}
+@import "../variables/layout-variables.less";

@@ -1,0 +1,58 @@
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 640px) and (max-width: 960px){
+
+	html,body{height:auto;}
+	body {background: rgba(0, 0, 0, 0) repeat scroll 0 0;}
+    
+    /* topbar */
+    #layout-topbar{width:100%; height:60px;}
+        #menu-button{width:60px; height:35px; padding-top:20px; float:left;}
+        #layout-topbar #logo{margin-left:15px;}
+    
+    /* topbar menu */
+    #topmenu-button{width:60px; height:37px; display:block; text-align:center; padding-top:23px; float:right; cursor:pointer; color:#FFFFFF;}
+    #topmenu-button:hover, #topmenu-button.active-menu{background-color:#f2f2f2;}
+
+    #top-menu{display:none; width:200px; float:right; margin:0px; padding:0px; background-color:#ffffff; overflow:hidden; height:auto; .topbar-menu-submenu-shadow;}
+    #top-menu.active-menu{display:block;}
+        #top-menu > li{width:200px; display:block; height:auto;}
+            #top-menu > li > a{display:block; padding:20px 15px; cursor:pointer;}
+            
+                #top-menu > li > a > i{float:left; margin-right:5px;}
+                #top-menu > li > a > span{display:inline-block; float:left; margin-top:2px;}
+
+            #top-menu > li ul{width:200px; overflow:hidden; position:inherit; height:0px; padding:0px; margin:0px !important; -webkit-box-shadow:none; -moz-box-shadow:none; box-shadow:none;}
+            #top-menu > li ul.active-menu{height:auto; background-color:#F9F9F9;}
+    
+    /* Changing Main Top Menu Positioning To Left For Mobile Devices */
+    .layout-menu-cover-top{width:300px; height:100%; margin-left:-300px; margin-top:0px; .mainmenu-left-cover-shadow;}
+    .layout-menu-cover-top.active-menu{margin-left:0px; height:100%; margin-top:0px; overflow:hidden;}
+    
+        /* Changing Main Top Menu Positioning To Left For Mobile Devices */
+        .layout-menu-cover-top .layout-menu{width:300px; height:100%; margin-top:60px;}
+            .layout-menu-cover-top .layout-menu > li{float:left; width:100%; border-bottom: dotted 1px #E0E0E0;}
+                .layout-menu-cover-top .layout-menu > li > a{display:block; padding:24px 20px; cursor:pointer; color:@mainmenu-link-color; font-weight:500;}
+                .layout-menu-cover-top .layout-menu > li > a:hover,
+                .layout-menu-cover-top .layout-menu > li > a.active-menu{background-color:@color-primary-1;}
+                    .layout-menu-cover-top .layout-menu > li > a i{font-size:16px;}
+
+        .layout-menu-cover-top .layout-menu > li ul{width:300px; overflow:hidden; height:0px; padding:0px; margin:0px;}
+        .layout-menu-cover-top .layout-menu > li ul.active-menu{overflow:hidden; height:auto;}
+
+        .layout-menu-cover-top .layout-menu > li > ul{width:300px; overflow:hidden; height:0px; background-color:#ffffff; padding:0px; margin:0px; position:inherit; box-shadow:none;}
+        .layout-menu-cover-top .layout-menu > li > ul.active-menu{overflow:hidden; height:auto; position:inherit; box-shadow:none; margin:0px; max-height:100%;}
+            .layout-menu-cover-top .layout-menu > li > ul li{float:left; width:300px;}
+                .layout-menu-cover-top .layout-menu > li > ul li a{display:block; padding:10px 30px; cursor:pointer; color:#FFFFFF; font-weight:500; font-size:14px;}
+
+            /*Changing Top Menu Positioning To Left For Mobile Devices (Menu Levels) */
+            .layout-menu-cover-top .menu-level-1 li a{padding-left:40px !important;}
+            .layout-menu-cover-top .menu-level-2 li a{padding-left:50px !important;}
+            .layout-menu-cover-top .menu-level-3 li a{padding-left:60px !important;}
+    
+        /* For Real Left Menu */
+        .layout-menu-cover-left .layout-menu{margin-top:60px;}
+		
+	/*Layout Portlets Cover*/
+	#layout-portlets-cover{padding:75px 55px;}
+}
+@import "../variables/layout-variables.less";

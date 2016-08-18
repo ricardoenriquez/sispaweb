@@ -1,0 +1,44 @@
+@media (min-width: 1201px) and (max-width:1366px){
+/* topbar */
+/*#layout-topbar{width:100%; height:80px; background-color:@topbar-bg-color; position:fixed; z-index:1000; .topbar-shadow;}*/
+/*#layout-topbar{width:100%; height:55px; background:rgba(0, 0, 0, 0) linear-gradient(to right, @color-primary-0 0%, @color-primary-1 100%) repeat scroll 0 0; position:fixed; z-index:1000; .topbar-shadow;}*/
+#layout-topbar{opacity: 0.9;}
+    #menu-button{width:60px; height:35px; border-right:solid 1px #e5e5e5; display:block; text-align:center; padding-top:20px; float:left; cursor:pointer;}
+    #menu-button:hover, #menu-button.active-menu{background-color:@mainmenu-toggler-bg-color-hover;}
+        #menu-button span{width:18px; height:3px; background-color:@mainmenu-toggler-icon-lines-bg-color; display:block; margin:0px auto 3px; border-radius:2px;}
+        #menu-button.active-menu #menuline1{-webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -o-transform: rotate(-45deg); -ms-transform: rotate(-45deg); transform: rotate(-45deg);
+            margin-top:6px;}
+        #menu-button.active-menu #menuline2{opacity:0;}
+        #menu-button.active-menu #menuline3{-webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -o-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg);
+            margin-top:-12px;}
+
+    #layout-topbar #logo{height:@topbar-logo-height; width:@topbar-logo-width; float:left; margin-left:30px;}
+
+    /* topbar menu */
+    #topmenu-button{width:80px; height:47px; text-align:center; padding-top:33px; float:right; cursor:pointer; color:@topbar-menu-toggler-color; display:none; border-left:solid 1px #e5e5e5;}
+    #topmenu-button:hover, #topmenu-button.active-menu{background-color:@topbar-menu-toggler-bg-color-hover;}
+
+    #top-menu{display:inline-block; float:right; margin:0px; padding:0px; height:64px; font-family:'latoregular',sans-serif;}
+        #top-menu > li{float:left; display:inline-block; height:55px; margin-right:1px;}
+            #top-menu > li > a{display:inline-block; height:16px; padding:19px 15px; font-size:@topbar-menu-first-level-link-font-size; color:@topbar-menu-first-level-link-color; cursor:pointer;}
+            #top-menu > li > a:hover,
+            #top-menu > li > a.active-menu{background-color:@topbar-menu-first-level-link-bg-color-hover;}
+            
+                #top-menu > li > a > i{font-size:@topbar-menu-first-level-link-icon-font-size; float:left;}
+                #top-menu > li > a:hover > i,
+                #top-menu > li > a:focus > i,
+                #top-menu > li > a.active-menu > i{margin-right:5px;}
+                
+                #top-menu > li > a > span{display:none; float:left; margin-top:2px;}
+                #top-menu > li > a:hover > span,
+                #top-menu > li > a.active-menu > span{display:inline-block;}
+
+            #top-menu > li ul{width:250px; overflow:hidden; height:0px; position:absolute; background-color:@topbar-menu-submenu-bg-color; padding:0px; margin:0px 0px 0px; .topbar-menu-submenu-shadow;}
+            #top-menu > li ul.active-menu{height:auto;}
+                #top-menu > li > ul li a{display:block; padding:15px; cursor:pointer; color:@topbar-menu-second-level-link-color; font-weight:500; font-size:@topbar-menu-second-level-link-font-size;
+                    .short-transition;}
+                #top-menu > li > ul li a:hover,
+                #top-menu > li > ul li a.active-menu{background-color:@topbar-menu-second-level-link-bg-color-hover-and-active;}
+
+}
+@import "../variables/layout-variables.less";
