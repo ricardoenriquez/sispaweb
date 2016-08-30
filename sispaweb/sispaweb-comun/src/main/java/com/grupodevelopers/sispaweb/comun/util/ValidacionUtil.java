@@ -1,4 +1,4 @@
-package com.empsii.mithra.comun.util;
+package com.grupodevelopers.sispaweb.comun.util;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

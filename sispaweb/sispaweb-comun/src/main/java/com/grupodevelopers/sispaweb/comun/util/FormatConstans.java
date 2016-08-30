@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.empsii.mithra.comun.util;
+package com.grupodevelopers.sispaweb.comun.util;
 
 /**
  * @author RENRIQUEZ

@@ -1,0 +1,21 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pm="http://primefaces.org/modena">
+	<div class="Animated05" id="layout-menu-cover">
+		<h:form id="menuform">
+			<pm:menu>
+				<p:menuitem id="miInicio" value="Inicio" outcome="/ui/index.html"
+					icon="icon-home" />
+				<p:separator />
+				<p:submenu id="smDemo" label="Demo" icon="icon-ondemand_video"
+					rendered="#{sesionUsuario.tieneRol('ADMINISTRADOR')}">
+					<p:menuitem id="miDemo" value="Administrar personas"
+						outcome="/ui/demo/administrarPersonas.html" icon="icon-track_changes" />
+				</p:submenu>
+			</pm:menu>
+		</h:form>
+	</div>
+</ui:composition>

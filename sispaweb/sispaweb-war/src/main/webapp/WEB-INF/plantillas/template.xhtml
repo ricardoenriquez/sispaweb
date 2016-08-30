@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<f:facet name="first">
+		<link rel="shortcut icon" type="image/x-icon"
+			href="/resources/img/MITHRA.ico" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+	</f:facet>
+	<ui:insert src="titulePage">
+		<title>#{mensajesWeb['global.title']}</title>
+	</ui:insert>
+	<h:outputScript name="js/ripple-effect.js" library="adamantium-layout" />
+	<h:outputScript name="js/perfect-scrollbar.js"
+		library="adamantium-layout" />
+
+	<h:outputScript name="js/layout.js" library="adamantium-layout" />
+	<h:outputScript name="js/prism.js" library="adamantium-layout" />
+	<h:outputScript name="js/jquery.numeric.min.js"
+		library="adamantium-layout" />
+	<script
+		src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+	<script
+		src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+	<ui:insert name="head" />
+</h:head>
+
+<h:body>
+	<script type="text/javascript">
+		jQuery.noConflict();
+		//paste this code under head tag or in a seperate js file.
+		// Wait for window load
+		$(window).load(function() {
+			// Animate loader off screen
+			$(".se-pre-con").fadeOut("slow");
+			$(".numeric").numeric();
+		});
+	</script>
+
+	<style>
+.no-js #loader {
+	display: none;
+}
+
+.js #loader {
+	display: block;
+	position: absolute;
+	left: 100px;
+	top: 0;
+}
+
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url("/javax.faces.resource/img/Preloader_3.gif.xhtml")
+		center no-repeat #fff;
+}
+</style>
+
+	<ui:include src="topbar.xhtml" />
+
+	<ui:include src="layoutmenu.xhtml" />
+
+	<div id="layout-portlets-cover">
+		<ui:insert name="breadCrumb" />
+		<div class="se-pre-con"></div>
+		<ui:insert name="dialogClose">
+			<h:form>
+				<p:confirmDialog
+					message="#{mensajesWeb['seguridad.question.logout']}"
+					header="#{mensajesWeb['global.title.logout']}" severity="alert"
+					modal="true" widgetVar="logoutConfirmation">
+
+					<p:commandButton value="#{mensajesWeb['global.boton.si']}"
+						oncomplete="PF('logoutConfirmation').hide()"
+						action="/ui/seguridad/login.xhtml?faces-redirect=true"
+						actionListener="#{inicioSesionVC.cerrarSesion()}" />
+					<p:commandButton value="#{mensajesWeb['global.boton.cancelar']}"
+						onclick="PF('logoutConfirmation').hide()" type="button" />
+				</p:confirmDialog>
+			</h:form>
+		</ui:insert>
+		<p:outputPanel deferred="true">
+			<ui:insert name="content">
+                Template
+        </ui:insert>
+		</p:outputPanel>
+
+
+		<!-- BEGIN -->
+		<div class="Container100">
+			<div class="ContainerIndent">
+				<div class="ShadowBox whiteback NavyBlueBorderedBox">
+					<div id="footerlinks" style="" class="Container100">
+						<a
+							class="DispInlBlock FontSourceSansLight Blue Fs12 Fleft HoverEffect"
+							href="../../ui/comun/terminos.xhtml">POLÍTICAS DE PRIVACIDAD
+							Y CONDICIONES DE USO.</a>
+					</div>
+
+					<div class="EmptyBox10"></div>
+
+					<div class="Container50 Responsive100">
+						<h:graphicImage name="empsii_WEB.png" library="img"
+							style="width: 130px;" />
+					</div>
+					<div class="Container50 Responsive100">
+						<div
+							class="DispInlBlock FontSourceSansLight BoldGray Fs12 Fright HoverEffect TexAlRight FloatNoneOnMobile">
+							EMPSII SAS © Copyright 2016 Todos los derechos reservados <span
+								class="DispBlock Wid100 FontSourceSansLight BoldGray Fs12 HoverEffect">Contáctenos<br />
+								Centro Empresa Calle 64 N # 5BN- 146 Oficina 415 Bloque A<br />
+								Tel. +57(2) 666 10 23 / 370 10 98 Celular. 312 774 2774<br />
+								dmduarte@empsii.com <br /> Cali - Colombia
+							</span>
+						</div>
+					</div>
+					<div class="EmptyBox10"></div>
+					<div class="Container50 Responsive100">
+						<div class="DispInlBlock Fright">
+							<a class="Blue Fs30"
+								href=" https://www.facebook.com/empsiisas/?fref=ts"><i
+								class="fa fa-facebook-square"></i></a> <a class="Blue Fs30"
+								href="https://twitter.com/empsii_sas"><i
+								class="fa fa-twitter-square"></i></a> <a class="Blue Fs30"
+								href="https://www.linkedin.com/"><i
+								class="fa fa-linkedin-square"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+	<ui:insert name="bottom">
+	</ui:insert>
+	<p:ajaxStatus
+		style="width:32px;height:32px;position:fixed;right:7px;bottom:50px">
+		<f:facet name="start">
+			<p:graphicImage name="images/preloader.gif"
+				library="adamantium-layout" />
+		</f:facet>
+
+		<f:facet name="complete">
+			<h:outputText value="" />
+		</f:facet>
+	</p:ajaxStatus>
+
+	<p:ajaxStatus onstart="PF('statusDialog').show()"
+		oncomplete="PF('statusDialog').hide()" />
+
+	<p:dialog widgetVar="statusDialog" modal="true" draggable="false"
+		closable="false" resizable="false" showHeader="false">
+		Cargando...
+		<p:graphicImage name="images/preloader.gif"
+			library="adamantium-layout" />
+	</p:dialog>
+
+	<h:outputStylesheet name="css/core-layout.css"
+		library="adamantium-layout" />
+	<h:outputStylesheet name="css/animate.css" library="adamantium-layout" />
+	<h:outputStylesheet name="css/adamantium-font.css"
+		library="adamantium-layout" />
+	<h:outputStylesheet name="css/ripple-effect.css"
+		library="adamantium-layout" />
+	<h:outputStylesheet name="css/perfect-scrollbar.css"
+		library="adamantium-layout" />
+	<h:outputStylesheet name="css/font-awesome.css"
+		library="adamantium-layout" />
+	<h:outputStylesheet name="css/adamantium-layout.css"
+		library="adamantium-layout" />
+	<h:outputStylesheet name="css/prism.css" library="adamantium-layout" />
+
+	<script type="text/javascript">
+		function callKeyEnterBuscador(component, e){
+			if (e.keyCode == 120) {
+				e.preventDefault(); 
+				component.ondblclick(); 
+				return false; 
+			}
+		}
+	</script>
+
+</h:body>
+
+</html>

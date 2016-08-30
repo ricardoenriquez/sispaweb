@@ -1,4 +1,4 @@
-package com.empsii.mithra.comun.util;
+package com.grupodevelopers.sispaweb.comun.util;
 
 public class Number {
 	public static final int CERO = 0;

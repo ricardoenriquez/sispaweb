@@ -1,0 +1,15 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pm="http://primefaces.org/adamantium">
+	<div class="layout-menu-cover-top Animated05" id="layout-menu-cover">
+		<h:form id="menuform">
+			<ul class="layout-menu">
+				<h:outputText escape="false"
+					value="#{sesionUsuario.obtenerMenuUsuario()}" />
+			</ul>
+		</h:form>
+	</div>
+</ui:composition>

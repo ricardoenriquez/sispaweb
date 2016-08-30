@@ -1,4 +1,4 @@
-package com.empsii.mithra.comun.util;
+package com.grupodevelopers.sispaweb.comun.util;
 
 import java.io.Serializable;
 

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<f:facet name="first">
+		<link rel="shortcut icon" type="image/x-icon"
+			href="/resources/img/MITHRA.ico" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+	</f:facet>
+	<ui:insert src="titulePage">
+		<title>#{mensajesWeb['global.title']}</title>
+	</ui:insert>
+
+	<h:outputScript name="js/ripple-effect.js" library="adamantium-layout" />
+	<h:outputScript name="js/perfect-scrollbar.js"
+		library="adamantium-layout" />
+	<h:outputScript name="js/layout.js" library="adamantium-layout" />
+	<h:outputScript name="js/prism.js" library="adamantium-layout" />
+	<h:outputScript name="js/jquery.numeric.min.js"
+		library="adamantium-layout" />
+	<script
+		src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+	<script
+		src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+	<ui:insert name="head" />
+</h:head>
+
+<h:body>
+	<script type="text/javascript">
+		jQuery.noConflict();
+		//paste this code under head tag or in a seperate js file.
+		// Wait for window load
+		$(window).load(function() {
+			// Animate loader off screen
+			$(".se-pre-con").fadeOut("slow");
+			$(".numeric").numeric();
+		});
+	</script>
+
+	<style>
+html, body {
+	background: #f7f5f3
+		url("/javax.faces.resource/img/MithraFondo_WEB.png.xhtml") no-repeat
+		scroll center center;
+	background-attachment: fixed;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#layout-portlets-cover {
+	background-image: inherit;
+}
+
+.no-js #loader {
+	display: none;
+}
+
+.js #loader {
+	display: block;
+	position: absolute;
+	left: 100px;
+	top: 0;
+}
+
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url("/javax.faces.resource/img/Preloader_3.gif.xhtml")
+		center no-repeat #fff;
+}
+</style>
+
+	<div id="layout-portlets-cover" style="padding: 3px 70px;">
+		<ui:insert name="breadCrumb" />
+		<div class="se-pre-con"></div>
+
+		<!-- 		<ui:insert name="breadCrumb"> -->
+		<!-- 			<div class="Container100"> -->
+		<!-- 				<div class="ContainerIndent" style="padding-bottom: 0px;padding-top: 0px;"> -->
+		<!-- 					<p:breadCrumb> -->
+		<!-- 						<p:menuitem value="Home" url="../" /> -->
+		<!-- 					</p:breadCrumb> -->
+		<!-- 				</div> -->
+		<!-- 			</div> -->
+		<!-- 		</ui:insert> -->
+		<p:outputPanel deferred="true">
+			<ui:insert name="content">
+                Template
+        </ui:insert>
+		</p:outputPanel>
+	</div>
+	<p:ajaxStatus
+		style="width:32px;height:32px;position:fixed;right:7px;bottom:50px">
+		<f:facet name="start">
+			<p:graphicImage name="images/preloader.gif"
+				library="adamantium-layout" />
+		</f:facet>
+
+		<f:facet name="complete">
+			<h:outputText value="" />
+		</f:facet>
+	</p:ajaxStatus>
+
+	<p:ajaxStatus onstart="PF('statusDialog').show()"
+		oncomplete="PF('statusDialog').hide()" />
+
+	<p:dialog widgetVar="statusDialog" modal="true" draggable="false"
+		closable="false" resizable="false" showHeader="false">
+		Cargando...
+		<p:graphicImage name="images/preloader.gif"
+			library="adamantium-layout" />
+	</p:dialog>
+
+	<h:outputStylesheet name="css/core-layout.css"
+		library="adamantium-layout" />
+	<h:outputStylesheet name="css/animate.css" library="adamantium-layout" />
+	<h:outputStylesheet name="css/adamantium-font.css"
+		library="adamantium-layout" />
+	<h:outputStylesheet name="css/ripple-effect.css"
+		library="adamantium-layout" />
+	<h:outputStylesheet name="css/perfect-scrollbar.css"
+		library="adamantium-layout" />
+	<h:outputStylesheet name="css/font-awesome.css"
+		library="adamantium-layout" />
+	<h:outputStylesheet name="css/adamantium-layout.css"
+		library="adamantium-layout" />
+	<h:outputStylesheet name="css/prism.css" library="adamantium-layout" />
+
+	<script type="text/javascript">
+		function callKeyEnterBuscador(component, e){
+			if (e.keyCode == 13) {e.preventDefault(); component.onchange(); return false; }
+		}
+	</script>
+
+</h:body>
+
+</html>
