@@ -1,0 +1,215 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	<p:panel style="display: none;" closable="true" toggleable="true"
+		widgetVar="pnlUsuarioView">
+		<h:form id="formGenericView" styleClass="formGenericView">
+			<div class="CenterForm">
+				<div class="Container">
+					<h:panelGroup styleClass="pnlUsuarioTxt">
+						<div class="Container10 White">
+							<!-- Libro -->
+							<div class="ContainerIndent">
+								<h:panelGroup>
+									<div class="Container100">
+										<p:outputLabel for="inputLibro" value="Libro" />
+									</div>
+									<div class="Container100">
+										<p:inputText styleClass="Fleft upperCase" required="true"
+											id="inputLibro" value="" />
+									</div>
+								</h:panelGroup>
+							</div>
+						</div>
+						<div class="Container10 White">
+							<!-- Folio -->
+							<div class="ContainerIndent">
+								<h:panelGroup>
+									<div class="Container100">
+										<p:outputLabel for="inputFolio" value="Folio" />
+									</div>
+									<div class="Container100">
+										<p:inputText styleClass="Fleft upperCase" required="true"
+											id="inputFolio" value="" />
+									</div>
+								</h:panelGroup>
+							</div>
+						</div>
+
+						<div class="Container10 White">
+							<!-- Numero -->
+							<div class="ContainerIndent">
+								<h:panelGroup>
+									<div class="Container100">
+										<p:outputLabel for="inputNumero" value="Numero" />
+									</div>
+									<div class="Container100">
+										<p:inputText styleClass="Fleft upperCase" required="true"
+											id="inputNumero" value="" />
+									</div>
+								</h:panelGroup>
+							</div>
+						</div>
+						<div class="Container10 White">
+							<!-- Documento Bautiazdo -->
+							<div class="ContainerIndent">
+								<h:panelGroup>
+									<div class="Container100">
+										<p:outputLabel value="Documento Sacerdote" />
+									</div>
+									<div class="Container100">
+										<p:inputText onkeyup="callKeyEnterBuscador(this, event);"
+											style="width:100%;background-color: #CEF6F5"
+											autocomplete="off" styleClass="TexAlCenter">
+											<p:ajax event="dblclick"
+												update="@(.formDialogMunicipio, .formOperadorMercador)"
+												process="@form" />
+										</p:inputText>
+									</div>
+								</h:panelGroup>
+							</div>
+						</div>
+						<div class="Container20 White">
+							<!-- Nombre Bautizado -->
+							<div class="ContainerIndent">
+								<h:panelGroup>
+									<div class="Container100">
+										<p:outputLabel value="Nombre Bautizado" />
+									</div>
+									<div class="Container100">
+										<p:inputText readonly="true" disabled="true"
+											autocomplete="off" styleClass="TexAlCenter">
+										</p:inputText>
+									</div>
+								</h:panelGroup>
+							</div>
+						</div>
+						<div class="Container15 White">
+							<!-- Fecha Ceremonia -->
+							<div class="ContainerIndent">
+								<h:panelGroup>
+									<div class="Container100">
+										<p:outputLabel value="Fecha Ceremonia" />
+									</div>
+									<div class="Container100">
+										<p:calendar navigator="true" pattern="dd/MM/yyyy"
+											styleClass="TexAlCenter" locale="es" />
+									</div>
+								</h:panelGroup>
+							</div>
+						</div>
+						<div class="Container30 White">
+							<!-- Nombre Padrinos -->
+							<div class="ContainerIndent">
+								<h:panelGroup>
+									<div class="Container100">
+										<p:outputLabel value="Nombre Padrinos" />
+									</div>
+									<div class="Container100">
+										<p:inputText styleClass="Fleft upperCase" />
+									</div>
+								</h:panelGroup>
+							</div>
+						</div>
+						<div class="Container30 White">
+							<!-- Nombre Abuelos Paternos-->
+							<div class="ContainerIndent">
+								<h:panelGroup>
+									<div class="Container100">
+										<p:outputLabel value="Nombre Abuelos Paternos" />
+									</div>
+									<div class="Container100">
+										<p:inputText styleClass="Fleft upperCase" />
+									</div>
+								</h:panelGroup>
+							</div>
+						</div>
+						<div class="Container30 White">
+							<!-- Nombre Abuelos Maternos-->
+							<div class="ContainerIndent">
+								<h:panelGroup>
+									<div class="Container100">
+										<p:outputLabel value="Nombre Abuelos Materno" />
+									</div>
+									<div class="Container100">
+										<p:inputText styleClass="Fleft upperCase" />
+									</div>
+								</h:panelGroup>
+							</div>
+						</div>
+
+						<div class="Container10 White">
+							<!-- Documento Sacerdote -->
+							<div class="ContainerIndent">
+								<h:panelGroup>
+									<div class="Container100">
+										<p:outputLabel value="DocumentoSacerdote" />
+									</div>
+									<div class="Container100">
+										<p:inputText onkeyup="callKeyEnterBuscador(this, event);"
+											style="width:100%;background-color: #CEF6F5"
+											autocomplete="off" styleClass="TexAlCenter">
+											<p:ajax event="dblclick"
+												update="@(.formDialogMunicipio, .formOperadorMercador)"
+												process="@form" />
+										</p:inputText>
+									</div>
+								</h:panelGroup>
+							</div>
+						</div>
+						<div class="Container20 White">
+							<!-- Sacerdote Celebra -->
+							<div class="ContainerIndent">
+								<h:panelGroup>
+									<div class="Container100">
+										<p:outputLabel value="Sacerdote Celebro" />
+									</div>
+									<div class="Container100">
+										<p:inputText readonly="true" disabled="true"
+											autocomplete="off" styleClass="TexAlCenter">
+										</p:inputText>
+									</div>
+								</h:panelGroup>
+							</div>
+						</div>
+						<div class="Container40 White">
+							<!-- Nota Marginal 1 -->
+							<div class="ContainerIndent">
+								<h:panelGroup>
+									<div class="Container100">
+										<p:outputLabel value="Nota Marginal 1" />
+									</div>
+									<div class="Container100">
+										<p:inputTextarea styleClass="upperCase" autocomplete="off" />
+									</div>
+								</h:panelGroup>
+							</div>
+						</div>
+						<div class="Container40 White">
+							<!-- Nota Marginal 2 -->
+							<div class="ContainerIndent">
+								<h:panelGroup>
+									<div class="Container100">
+										<p:outputLabel value="Nota Marginal 2" />
+									</div>
+									<div class="Container100">
+										<p:inputTextarea styleClass="upperCase" autocomplete="off" />
+									</div>
+								</h:panelGroup>
+							</div>
+						</div>
+					</h:panelGroup>
+					<div class="EmptyBox20"></div>
+					<div class="Fleft ShowOnDesktop">
+						<p:commandButton value="#{mensajesWeb['global.boton.volver']}"
+							style="width:auto" styleClass="RedButton" icon="fa fa-mail-reply"
+							process="@this" update="@(.formGenericSelect)"
+							oncomplete="PF('pnlGenericSelect').show(); PF('pnlGenericView').close();" />
+					</div>
+				</div>
+			</div>
+		</h:form>
+	</p:panel>
+</ui:composition>

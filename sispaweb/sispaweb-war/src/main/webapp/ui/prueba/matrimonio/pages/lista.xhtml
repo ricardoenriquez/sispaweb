@@ -1,0 +1,73 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	<p:panel widgetVar="pnlGenericSelect" closable="true" toggleable="true"
+		header="Listado" styleClass="pnlBancoSelect" closeSpeed="0">
+		<h:form styleClass="formGenericSelect">
+			<div class="CenterForm">
+				<div class="Container">
+					<p:dataTable selectionMode="single" rows="10"
+						paginatorAlwaysVisible="false" paginator="true"
+						paginatorPosition="bottom" resizableColumns="true"
+						emptyMessage="#{mensajesWeb['global.mensaje.datos.vacios']}">
+
+						<p:column headerText="Libro" styleClass="TexAlCenter">
+							<p:outputLabel value="" />
+						</p:column>
+						<p:column headerText="Folio" styleClass="TexAlCenter">
+							<p:outputLabel value="" />
+						</p:column>
+						<p:column headerText="Numero" styleClass="TexAlCenter">
+							<p:outputLabel value="" />
+						</p:column>
+						<p:column headerText="Nombre Esposo" styleClass="TexAlCenter">
+							<p:outputLabel value="" />
+						</p:column>
+						<p:column headerText="Apellidos Esposo" styleClass="TexAlCenter">
+							<p:outputLabel value="" />
+						</p:column>
+						<p:column headerText="Nombre Esposa" styleClass="TexAlCenter">
+							<p:outputLabel value="" />
+						</p:column>
+						<p:column headerText="Apellidos Esposa" styleClass="TexAlCenter">
+							<p:outputLabel value="" />
+						</p:column>
+						<p:column headerText="Fecha Ceremonia" styleClass="TexAlCenter">
+							<p:outputLabel value="" />
+						</p:column>
+						<p:column headerText="Padrino" styleClass="TexAlCenter">
+							<p:outputLabel value="" />
+						</p:column>
+						<p:column headerText="Sacerdote Celebra" styleClass="TexAlCenter">
+							<p:outputLabel value="" />
+						</p:column>
+					</p:dataTable>
+
+					<div class="ContainerIndent">
+						<div class="Fleft ShowOnDesktop">
+							<p:commandButton style="width:auto" update="@(.formGeneric)"
+								icon="fa fa-plus"
+								onclick="PF('pnlGenericSelect').close(); PF('pnlGeneric').show();"
+								value="#{mensajesWeb['global.boton.agregar']}" process="@this" />
+							<p:commandButton style="width:auto"
+								update="@(.formGeneric, .formControl)" icon="fa fa-edit"
+								styleClass="BlueTextButton RaisedButton"
+								value="#{mensajesWeb['global.boton.modificar']}" />
+							<p:commandButton value="#{mensajesWeb['global.boton.ver.datos']}"
+								style="width:auto" update="@(.formGenericView, .formControl)"
+								styleClass="BlueTextButton RaisedButton" icon="fa fa-book" />
+							<p:commandButton value="Imprimir"
+								style="width:auto" update="@(.formGenericView, .formControl)"
+								styleClass="BlueTextButton RaisedButton" icon="fa fa-print" />
+							<p:commandButton value="#{mensajesWeb['global.boton.eliminar']}"
+								style="width:auto" update="@(.formGenericSelect, .formControl)"
+								styleClass="RedButton" icon="fa  fa-remove" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</h:form>
+	</p:panel>
+</ui:composition>

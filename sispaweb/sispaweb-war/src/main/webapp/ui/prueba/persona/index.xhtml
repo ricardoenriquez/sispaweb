@@ -1,0 +1,57 @@
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/plantillas/template.xhtml">
+
+
+	<ui:insert src="titulePage">
+		<title>Persona</title>
+	</ui:insert>
+
+	<ui:define name="content">
+		<style>
+.txtCampoBusqueda {
+	width: 15% !important;
+	background-color: #CEF6F7 !important;
+}
+</style>
+		<div class="Flex">
+			<div class="FlexRow">
+				<div class="FlexCell">
+					<div class="Container100">
+						<div class="ContainerIndent">
+							<div class="ShadowBox whiteback ui-fluid">
+								<div class="topHeader Orange">Persona</div>
+								<ui:include src="/ui/prueba/persona/pages/personaLista.xhtml" />
+								<ui:include src="/ui/prueba/persona/pages/personaCrear.xhtml" />
+								<ui:include src="/ui/prueba/persona/pages/personaVer.xhtml" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</ui:define>
+	<ui:define name="bottom">
+		<h:form styleClass="formControl" id="formControl">
+			<p:growl id="msgFormButton" showDetail="true" showSummary="false"
+				autoUpdate="true" />
+			<div class="layout-bottom">
+				<div class="ContainerIndent">
+					<div class="Fright">
+						<h:panelGroup>
+							<p:commandButton value="Guardar" style="width:auto"
+								partialSubmit="true" icon="fa  fa-save White Fs14" />
+							<p:commandButton value="Cancelar" style="width:auto"
+								styleClass="RedButton" icon="fa Fs14  fa-ban" process="@this" />
+						</h:panelGroup>
+					</div>
+				</div>
+			</div>
+		</h:form>
+	</ui:define>
+
+</ui:composition>

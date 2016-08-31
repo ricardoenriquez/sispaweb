@@ -1,0 +1,137 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	<p:panel style="display: none;" closable="true" toggleable="true"
+		widgetVar="pnlGeneric">
+		<h:form id="formGeneric" styleClass="formGeneric">
+			<p:focus context="formGeneric" />
+			<div class="CenterForm">
+				<div class="Container">
+					<h:panelGroup styleClass="pnlOperadorTxt">
+
+						<div class="Container10 White">
+							<!-- Nombre -->
+							<div class="ContainerIndent">
+								<h:panelGroup>
+									<div class="Container100">
+										<p:outputLabel for="inputNombre" value="Nombre" />
+									</div>
+									<div class="Container100">
+										<p:inputText styleClass="Fleft upperCase" required="true"
+											id="inputNombre" value="" />
+									</div>
+								</h:panelGroup>
+							</div>
+						</div>
+						<div class="Container10 White">
+							<!-- Direccion -->
+							<div class="ContainerIndent">
+								<h:panelGroup>
+									<div class="Container100">
+										<p:outputLabel for="inputDireccion" value="Direccion" />
+									</div>
+									<div class="Container100">
+										<p:inputText styleClass="Fleft upperCase" required="true"
+											id="inputDireccion" value="" />
+									</div>
+								</h:panelGroup>
+							</div>
+						</div>
+
+						<div class="Container10 White">
+							<!-- Arquidiocesis -->
+							<div class="ContainerIndent">
+								<h:panelGroup>
+									<div class="Container100">
+										<p:outputLabel for="inputarquidiocesis" value="Arquidiocesis" />
+									</div>
+									<div class="Container100">
+										<p:inputText styleClass="Fleft upperCase" required="true"
+											id="inputarquidiocesis" value="" />
+									</div>
+								</h:panelGroup>
+							</div>
+						</div>
+
+						<div class="Container10 White">
+							<!-- Municipio -->
+							<div class="ContainerIndent">
+								<h:panelGroup>
+									<div class="Container100">
+										<p:outputLabel for="inputMunicipio" value="Municipio" />
+									</div>
+									<div class="Container100">
+										<p:inputText styleClass="Fleft upperCase" required="true"
+											id="inputMunicipio" value="" />
+									</div>
+								</h:panelGroup>
+							</div>
+						</div>
+						<div class="Container10 White">
+							<!-- Telefono -->
+							<div class="ContainerIndent">
+								<h:panelGroup>
+									<div class="Container100">
+										<p:outputLabel value="Telefono" />
+									</div>
+									<div class="Container100">
+										<p:inputMask styleClass="TexAlCenter" value=""
+											mask="(999) 999-9999" />
+									</div>
+								</h:panelGroup>
+							</div>
+						</div>
+						<div class="Container15 White">
+							<!-- email -->
+							<div class="ContainerIndent">
+								<h:panelGroup>
+									<div class="Container100">
+										<p:outputLabel value="Email" />
+									</div>
+									<div class="Container100">
+										<p:inputText styleClass="Fleft"
+											validatorMessage="Correo sin formato" value="">
+											<p:ajax process="@form" update="@form" />
+											<f:validateRegex
+												pattern="(^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$)?" />
+										</p:inputText>
+									</div>
+								</h:panelGroup>
+							</div>
+						</div>
+
+
+						<div class="Container10 White">
+							<!-- Pagina Web -->
+							<div class="ContainerIndent">
+								<h:panelGroup>
+									<div class="Container100">
+										<p:outputLabel for="inputPaginaWeb" value="Pagina Web" />
+									</div>
+									<div class="Container100">
+										<p:inputText styleClass="Fleft upperCase" required="true"
+											id="inputPaginaWeb" value="" />
+									</div>
+								</h:panelGroup>
+							</div>
+						</div>
+
+					</h:panelGroup>
+					<div class="EmptyBox20"></div>
+					<div class="Fleft ShowOnDesktop">
+						<p:commandButton style="width:auto"
+							value="#{mensajesWeb['global.boton.agregar']}"
+							update="@(.formGenericSelect, .formGeneric)" process="@form"
+							icon="fa Fs14 fa-plus" />
+						<p:commandButton value="Cancelar" style="width:auto"
+							styleClass="RedButton" icon="fa Fs14  fa-ban" process="@this"
+							update="@(.formGenericSelect)"
+							oncomplete="PF('pnlGenericSelect').show(); PF('pnlGeneric').close();" />
+					</div>
+				</div>
+			</div>
+		</h:form>
+	</p:panel>
+</ui:composition>
