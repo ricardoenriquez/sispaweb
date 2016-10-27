@@ -16,59 +16,67 @@
 	</f:facet>
 	<title>#{mensajesWeb['global.title']}</title>
 	<ui:insert name="head" />
-<!-- 	<link rel="shortcut icon" type="image/x-icon" -->
-<!-- 		href="/resources/img/MITHRA.ico" /> -->
-	<script type="text/javascript">
-    jQuery(document).ready(function()
-            {
-            });
-	</script>
+	<!-- 	<link rel="shortcut icon" type="image/x-icon" -->
+	<!-- 		href="/resources/img/MITHRA.ico" /> -->
 </h:head>
 
+<style type="text/css">
+.login-body .login-panel {
+	background-color: #ffffff;
+	box-shadow: 0 5px 7px 5px rgba(0, 0, 0, 0.1);
+	box-sizing: border-box;
+	height: 100%;
+	overflow: auto;
+	padding: 100px 50px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 350px;
+}
+</style>
 
-<h:body styleClass="loginback">
-
-	<div class=" MarAuto DispBlock OvHidden" style="width: 400px;">
-		<div class="ContainerIndent">
-			<div class="Wid90 MarAuto">
-				<div class="Wid100 TexAlCenter">
-					<div class="EmptyBox30"></div>
+<h:body styleClass="loginback login-body">
+	<div class="login-panel ui-fluid">
+		<div class=" MarAuto">
+			<div class="Wid100 TexAlCenter">
+				<div class="EmptyBox30"></div>
+			</div>
+			<h:form>
+				<p:growl id="msgs" showDetail="true" showSummary="false"
+					autoUpdate="true" />
+				<div class="Wid100 TexAlCenter" >
+					<h:graphicImage name="login-logo.png" library="imagen"
+						style="width: 80px;" />
 				</div>
-				<div
-					class="ShadowBox whiteback TexAlCenter RedBorderedBox BordRad15">
-					<h:form>
-						<p:growl id="msgs" showDetail="true" showSummary="false"
-							autoUpdate="true" />
-						<div class="EmptyBox20"></div>
-						<div class="Wid100">
-							<p:inputText placeholder="Usuario"
-								value="#{inicioSesionVC.login}"
-								styleClass="Wid80 TexAlCenter Fs18" />
-						</div>
-						<div class="EmptyBox10"></div>
-						<div class="Wid100">
-							<p:inputText type="password" value="#{inicioSesionVC.password}"
-								placeholder="Contraseña" styleClass="Wid80 TexAlCenter Fs18" />
-						</div>
-						<div class="EmptyBox30"></div>
-						<div class="Wid100">
-							<p:commandButton
-								action="/ui/dashboard/index.xhtml?faces-redirect=true"
-								actionListener="#{inicioSesionVC.iniciarSesion()}"
-								styleClass="Wid60" icon="fa fa-sign-in Fs18 white "
-								value="#{mensajesWeb['inicioSesion.iniciarSesion']}" />
-						</div>
-						<div class="EmptyBox30"></div>
-					</h:form>
+				<div class="EmptyBox20"></div>
+				<div class="Wid100">
+					<p:inputText placeholder="Usuario" value="#{inicioSesionVC.login}"
+						styleClass="Wid80 TexAlCenter Fs18" />
 				</div>
-				<div
-					class="Wid100 TexAlCenter MarTop20 softgray Fs12 FontDosisRegular">
-					GrupoDeveloper SAS <i class="fa fa-copyright" /> Copyright 2016
-					Todos los derechos reservados
+				<div class="EmptyBox10"></div>
+				<div class="Wid100">
+					<p:inputText type="password" value="#{inicioSesionVC.password}"
+						placeholder="Contraseña" styleClass="Wid80 TexAlCenter Fs18" />
 				</div>
+				<div class="EmptyBox30"></div>
+				<div class="Wid100">
+					<p:commandButton
+						action="/ui/dashboard/index.xhtml?faces-redirect=true"
+						actionListener="#{inicioSesionVC.iniciarSesion()}"
+						styleClass="Wid60 CyanButton RaisedButton"
+						icon="fa fa-sign-in Fs18 white "
+						value="#{mensajesWeb['inicioSesion.iniciarSesion']}" />
+				</div>
+				<div class="EmptyBox30"></div>
+			</h:form>
+			<div
+				class="Wid100 TexAlCenter MarTop20 softgray Fs12 FontDosisRegular">
+				GrupoDeveloper SAS <i class="fa fa-copyright" /> Copyright 2016
+				Todos los derechos reservados
 			</div>
 		</div>
 	</div>
+
 
 
 	<h:outputStylesheet name="css/core-layout.css"
